@@ -26,5 +26,13 @@ public class UserController {
         return ResponseEntity.ok(redirectUrl);
     }
 
+    @GetMapping("/login-validate")
+    public ResponseEntity<String> loginValidate(@RequestBody String user){
+//        System.out.println(userDTO);
+//        String redirectUrl = "/profile";
+//        userService.validateUserHexpump(user);
+        return ResponseEntity.ok("user valid");
+    }
+
 
 }
