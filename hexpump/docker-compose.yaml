@@ -1,0 +1,10 @@
+version: '3'
+services:
+  db:
+    image: postgres:15
+    environment:
+      - POSTGRES_DB=hexpump
+      - POSTGRES_USER=hexpump
+      - POSTGRES_PASSWORD=hexpump
+    ports:
+      - '5437:5432'

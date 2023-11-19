@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form id="loginForm">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+
+    <button type="button" onclick="submitForm()">Login</button>
+</form>
+
+<button type="button" onclick="loginHex()">Log in Hexpump</button>
+<button type="button" onclick="registerHex()">Register with Hexpump</button>
+
+<script>
+    function submitForm() {
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+
+        var formData = {
+            username: username,
+            password: password
+        };
+
+        fetch('/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        })
+            .then(response => {
+                if (response.ok) {
+                    return response.text();
+                } else {
+                    throw new Error('Network response was not ok.');
+                }
+            })
+            .then(redirectUrl => {
+                console.log('Redirecting to:', redirectUrl);
+                window.location.href = redirectUrl;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }
+    function loginHex(){
+        window.location.href='/verifyIdentity'
+    }
+    function registerHex(){
+        window.location.href='/registerIdentity'
+    }
+</script>
+
+</body>
+</html>
