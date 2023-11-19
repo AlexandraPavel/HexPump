@@ -25,4 +25,6 @@ public class UserController {
         userService.validateUserHexpump(userDTO);
         return ResponseEntity.ok(redirectUrl);
     }
+
+
 }

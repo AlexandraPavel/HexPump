@@ -4,6 +4,8 @@ import lombok.Data;
 
 @Data
 public class UserDTO {
-    private String username;
-    private String password;
+    private String userID;
+    private String face;
+    private String fingerprint;
+    private String signature;
 }

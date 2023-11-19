@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Data
-@Table(name="user_hexpump")
+@Table(name="user_authe")
 public class UserAuthe {
     @Id
     @Column
