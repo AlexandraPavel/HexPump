@@ -1,0 +1,10 @@
+version: '3'
+services:
+  db:
+    image: postgres:15
+    environment:
+      - POSTGRES_DB=authenticate
+      - POSTGRES_USER=authenticate
+      - POSTGRES_PASSWORD=authenticate
+    ports:
+      - '5438:5432'
